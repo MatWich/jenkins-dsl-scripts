@@ -10,13 +10,14 @@ job("seed-test") {
     }
 
     steps {
-        script {
-            def dslScripts = findFiles(glob: 'jobs/**/*.groovy')
+        dsl {
+            useScriptText('''def dslScripts = findFiles(glob: 'jobs/**/*.groovy')
             for (File dslScriptFile in dslScripts) {
                 def dslScriptText = readFile(dslScriptFile.path)
                 jobDsl(dslScriptText)
             }
+            ignoreMissingFiles(false)
+            ''')
         }
-        ignoreMissingFiles(false)
     }
 }
