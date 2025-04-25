@@ -14,7 +14,7 @@ pipelineJob("my-first-job") {
                     remote {
                         url(JENKINS_DSL_REPO_URL_HTTPS)
                     }
-                    branch("master")
+                    branch("main")
                 }
             }
             scriptPath("pipelines/MyFirstJob.groovy")
