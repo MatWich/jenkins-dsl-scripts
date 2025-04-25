@@ -1,4 +1,4 @@
-freeStyleJob("seed") {
+freeStyleJob("seed-test") {
     logRotator(1, 10)
     scm {
         git {
@@ -11,7 +11,7 @@ freeStyleJob("seed") {
 
     steps {
         dsl {
-            fromFilesystem('jobs/MyFirstJobSeed.groovy', 'jobs/Seed.groovy')
+            seedFrom('jobs/*.groovy')
             ignoreMissingFiles(false)
 
         }
