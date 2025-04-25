@@ -12,7 +12,7 @@ pipelineJob("my-first-job") {
             scm {
                 git {
                     remote {
-                        url(JENKINS_DSL_REPO_URL_HTTPS)
+                        url(Constants.JENKINS_DSL_REPO_URL_HTTPS)
                     }
                     branch("main")
                 }
