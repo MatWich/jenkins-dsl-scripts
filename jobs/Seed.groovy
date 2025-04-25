@@ -1,4 +1,4 @@
-freeStyleJob("seed-test") {
+job("seed-test") {
     logRotator(1, 10)
     scm {
         git {
