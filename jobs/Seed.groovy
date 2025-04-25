@@ -10,10 +10,13 @@ freeStyleJob("seed-test") {
     }
 
     steps {
-        dsl {
-            seedFrom('jobs/*.groovy')
-            ignoreMissingFiles(false)
-
+        script {
+            def dslScripts = findFiles(glob: 'jobs/**/*.groovy')
+            for (File dslScriptFile in dslScripts) {
+                def dslScriptText = readFile(dslScriptFile.path)
+                jobDsl(dslScriptText)
+            }
         }
+        ignoreMissingFiles(false)
     }
 }
