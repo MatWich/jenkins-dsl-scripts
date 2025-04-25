@@ -1,4 +1,6 @@
-import com.agroniks.utils.*
+import com.agroniks.utils.Descriptions
+import com.agroniks.utils.Constants
+import com.agroniks.utils.Parameters
 
 pipelineJob("my-first-job") {
     description(Descriptions.FIRST_JOB)
