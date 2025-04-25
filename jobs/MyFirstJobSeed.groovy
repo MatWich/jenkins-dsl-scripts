@@ -1,12 +1,8 @@
-import com.agroniks.utils.Descriptions
-import com.agroniks.utils.Constants
-import com.agroniks.utils.Parameters
-
 pipelineJob("my-first-job") {
-    description(Descriptions.FIRST_JOB)
+    description("MY FIRST JOB FROM DSL!")
 
     parameters {
-        choiceParam('FIGHTER', Constants.FIGHTERS, Description.FIGHTERS)
+        choiceParam('FIGHTER', ["Andrzejek", "Macius", "Rysiu", "Janusz"], "Choose your fighter")
     }
 
     definition {
@@ -14,7 +10,7 @@ pipelineJob("my-first-job") {
             scm {
                 git {
                     remote {
-                        url(Constants.JENKINS_DSL_REPO_URL_HTTPS)
+                        url("https://github.com/MatWich/jenkins-dsl-scripts.git")
                     }
                     branch("main")
                 }
