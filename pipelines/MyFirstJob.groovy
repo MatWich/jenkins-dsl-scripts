@@ -9,7 +9,7 @@ pipeline {
     stages  {
         stage("My first stage") {
             steps {
-                echo "Found awesome name ${AWESOME_NAME}"
+                echo "Found awesome name ${FIGHTER}"
             }
         }
 
