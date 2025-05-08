@@ -5,7 +5,7 @@ pipeline {
         stage('Get DSL files') {
             steps {
                 git(
-                    url: 'https://github.com/MAtWich/jenkins-dsl-scripts.git'
+                    url: 'https://github.com/MAtWich/jenkins-dsl-scripts.git',
                     branch: 'main'
                 )
             }
